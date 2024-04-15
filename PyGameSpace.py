@@ -13,7 +13,7 @@ WIDTH, HEIGHT = 600, 400
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
-
+will_to_play = "y"
 # Spieler Eigenschaften
 PLAYER_WIDTH, PLAYER_HEIGHT = 50, 20
 PLAYER_SPEED = 5
@@ -97,4 +97,13 @@ def main(score):
     
 
 if __name__ == "__main__":
-    main(score)
+    
+    while will_to_play == "y":
+        will_to_play=input("Wanna Play(y/n)")
+        if will_to_play == ("y"):
+            main(score)
+        elif will_to_play == "n":
+            pass
+        else:
+            will_to_play = "y"
+
