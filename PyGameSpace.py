@@ -89,10 +89,11 @@ def main(score):
         draw_enemies(enemies)
 
         pygame.display.flip()
-        clock.tick(60)         
-    add_ons_PyGame.highscore(score,highscorelist,screen,BLACK)
-    time.sleep(10)
-  
+        clock.tick(60)      
+    add_ons_PyGame.gameover(screen,RED)
+    add_ons_PyGame.highscore(score,highscorelist,screen,BLACK,WHITE)
+    
+    time.sleep(5)
     pygame.quit()
 
 if __name__ == "__main__":
