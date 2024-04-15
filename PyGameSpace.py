@@ -1,5 +1,6 @@
 import pygame
 import random
+import add_ons_PyGame
 
 # Initialisierung von Pygame
 pygame.init()
@@ -15,7 +16,7 @@ RED = (255, 0, 0)
 # Spieler Eigenschaften
 PLAYER_WIDTH, PLAYER_HEIGHT = 50, 20
 PLAYER_SPEED = 5
-
+score=0
 # Gegner Eigenschaften
 ENEMY_WIDTH, ENEMY_HEIGHT = 30, 30
 ENEMY_SPEED = 3
@@ -54,7 +55,8 @@ def main():
     running = True
     while running:
         screen.fill(WHITE)
-
+        score =+ ENEMY_SPEED
+        add_ons_PyGame.drawscore(score,BLACK,screen)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
