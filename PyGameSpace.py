@@ -16,7 +16,8 @@ RED = (255, 0, 0)
 # Spieler Eigenschaften
 PLAYER_WIDTH, PLAYER_HEIGHT = 50, 20
 PLAYER_SPEED = 5
-score=0
+score = 0
+highscorelist = []
 # Gegner Eigenschaften
 ENEMY_WIDTH, ENEMY_HEIGHT = 30, 30
 ENEMY_SPEED = 3
@@ -51,12 +52,14 @@ def draw_enemies(enemies):
 def main():
     player = pygame.Rect(WIDTH // 2 - PLAYER_WIDTH // 2, HEIGHT - 50, PLAYER_WIDTH, PLAYER_HEIGHT)
     enemies = []
-
+    
     running = True
     while running:
+        
         screen.fill(WHITE)
-        score =+ ENEMY_SPEED
+        score = add_ons_PyGame.scorecounting(score,ENEMY_SPEED)
         add_ons_PyGame.drawscore(score,BLACK,screen)
+        add_ons_PyGame.highscore(score,highscorelist,screen,BLACK)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
