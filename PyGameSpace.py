@@ -46,8 +46,7 @@ def draw_player(player):
 
 # Funktion zum Zeichnen der Gegner
 def draw_enemies(enemies):
-    for enemy in enemies:
-        pygame.draw.rect(screen, BLACK, enemy)
+    add_ons_PyGame.draw_enemies(enemies, screen)  # Hier die Funktion aus der separaten Datei aufrufen
 
 # Hauptspiel
 def main(score):
