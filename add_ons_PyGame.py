@@ -25,4 +25,7 @@ def gameover(screen,RED):
     screen.blit(text,(100,70))
     pygame.display.flip()
     time.sleep(1)
-     
+
+def gameloop():
+    
+    pygame.quit()

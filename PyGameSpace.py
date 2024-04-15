@@ -92,9 +92,9 @@ def main(score):
         clock.tick(60)      
     add_ons_PyGame.gameover(screen,RED)
     add_ons_PyGame.highscore(score,highscorelist,screen,BLACK,WHITE)
+    add_ons_PyGame.gameloop
     
-    time.sleep(5)
-    pygame.quit()
+    
 
 if __name__ == "__main__":
     main(score)
