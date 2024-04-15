@@ -1,6 +1,7 @@
 import pygame
 import random
 import add_ons_PyGame
+import time
 
 # Initialisierung von Pygame
 pygame.init()
@@ -17,7 +18,7 @@ RED = (255, 0, 0)
 PLAYER_WIDTH, PLAYER_HEIGHT = 50, 20
 PLAYER_SPEED = 5
 score = 0
-highscorelist = []
+highscorelist = [0,0,0,0,0]
 # Gegner Eigenschaften
 ENEMY_WIDTH, ENEMY_HEIGHT = 30, 30
 ENEMY_SPEED = 3
@@ -49,7 +50,7 @@ def draw_enemies(enemies):
         pygame.draw.rect(screen, BLACK, enemy)
 
 # Hauptspiel
-def main():
+def main(score):
     player = pygame.Rect(WIDTH // 2 - PLAYER_WIDTH // 2, HEIGHT - 50, PLAYER_WIDTH, PLAYER_HEIGHT)
     enemies = []
     
@@ -59,7 +60,7 @@ def main():
         screen.fill(WHITE)
         score = add_ons_PyGame.scorecounting(score,ENEMY_SPEED)
         add_ons_PyGame.drawscore(score,BLACK,screen)
-        add_ons_PyGame.highscore(score,highscorelist,screen,BLACK)
+      
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
@@ -88,9 +89,11 @@ def main():
         draw_enemies(enemies)
 
         pygame.display.flip()
-        clock.tick(60)
-
+        clock.tick(60)         
+    add_ons_PyGame.highscore(score,highscorelist,screen,BLACK)
+    time.sleep(10)
+  
     pygame.quit()
 
 if __name__ == "__main__":
-    main()
+    main(score)
