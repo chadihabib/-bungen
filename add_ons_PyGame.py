@@ -2,16 +2,21 @@ import pygame
 import time
 import random
 from PIL import Image
+import requests
+from io import BytesIO
+
 
 ENEMY_WIDTH, ENEMY_HEIGHT = random.randint(20,50), random.randint(20,50)  # Größe des Gegners angepasst
 
 def draw_enemies(enemies, screen):
     # Bild laden und Größe anpassen
-    gegnerBild = pygame.image.load(r'https://github.com/chadihabib/-bungen/blob/main/Enemypicture.png')
+    gegnerBild = pygame.image.load("Enemypicture.png")
     gegnerBild = pygame.transform.scale(gegnerBild, (ENEMY_WIDTH, ENEMY_HEIGHT))
     for enemy in enemies:
         # Zeichne das Gegnerbild an der Position des Gegners
         screen.blit(gegnerBild, (enemy.x, enemy.y))
+
+
 def scorecounting(score,ENEMY_SPEED):
     score += ENEMY_SPEED
     return score
@@ -44,10 +49,10 @@ def gameloop():
 # Gegner Eigenschaften
 ENEMY_WIDTH, ENEMY_HEIGHT = random.randint(20,50), random.randint(20,50)  # Größe des Gegners angepasst
 
-def draw_enemies(enemies, screen):
-    # Bild laden und Größe anpassen
-    gegnerBild = pygame.image.load()
-    gegnerBild = pygame.transform.scale(gegnerBild, (ENEMY_WIDTH, ENEMY_HEIGHT))
-    for enemy in enemies:
-        # Zeichne das Gegnerbild an der Position des Gegners
-        screen.blit(gegnerBild, (enemy.x, enemy.y))
+# def draw_enemies(enemies, screen):
+#     # Bild laden und Größe anpassen
+#     gegnerBild = pygame.image.load()
+#     gegnerBild = pygame.transform.scale(gegnerBild, (ENEMY_WIDTH, ENEMY_HEIGHT))
+#     for enemy in enemies:
+#         # Zeichne das Gegnerbild an der Position des Gegners
+#         screen.blit(gegnerBild, (enemy.x, enemy.y))
