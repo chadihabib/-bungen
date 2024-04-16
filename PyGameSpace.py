@@ -48,6 +48,7 @@ def draw_player(player):
 def draw_enemies(enemies):
     add_ons_PyGame.draw_enemies(enemies, screen)  # Hier die Funktion aus der separaten Datei aufrufen
 
+
 # Hauptspiel
 def main(score):
     player = pygame.Rect(WIDTH // 2 - PLAYER_WIDTH // 2, HEIGHT - 50, PLAYER_WIDTH, PLAYER_HEIGHT)
