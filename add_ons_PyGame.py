@@ -39,5 +39,15 @@ def gameover(screen,RED):
     time.sleep(1)
 
 def gameloop():
-    
     pygame.quit()
+
+# Gegner Eigenschaften
+ENEMY_WIDTH, ENEMY_HEIGHT = random.randint(20,50), random.randint(20,50)  # Größe des Gegners angepasst
+
+def draw_enemies(enemies, screen):
+    # Bild laden und Größe anpassen
+    gegnerBild = pygame.image.load()
+    gegnerBild = pygame.transform.scale(gegnerBild, (ENEMY_WIDTH, ENEMY_HEIGHT))
+    for enemy in enemies:
+        # Zeichne das Gegnerbild an der Position des Gegners
+        screen.blit(gegnerBild, (enemy.x, enemy.y))
